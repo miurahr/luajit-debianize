@@ -1,14 +1,14 @@
-Format-Specification: http://dep.debian.net/deps/dep5/ 
-Name: LuaJIT
-Maintainer: Mike Pall, http://luajit.org/contact.html
+Format: http://dep.debian.net/deps/dep5/ 
+Upstream-Name: LuaJIT
+Upstream-Contact: Mike Pall, http://luajit.org/contact.html
 Source: http://luajit.org/
 
 Files: *
-Copyright: 2005-2009, Mike Pall
+Copyright: 2005-2011, Mike Pall
 License: MIT/X
 
-Files: src/lua.h, src/lauxlib.h, src/lualib.h, src/*.c
-Copyright: 1994-2008, Lua.org, PUC-Rio
+Files: src/lua.h src/lauxlib.h src/lualib.h
+Copyright: 1994-2011, Lua.org, PUC-Rio
 License: MIT/X
 
 Files: src/lj_alloc.c
@@ -24,12 +24,12 @@ License: PD
   identified below (the "Work") to the public domain. A certifier, moreover,
   dedicates any copyright interest he may have in the associated work, and
   for these purposes, is described as a "dedicator" below.
-  
+  .
   A certifier has taken reasonable steps to verify the copyright status of
   this work. Certifier recognizes that his good faith efforts may not shield
   him from liability if in fact the work certified is not in the public
   domain.
-  
+  .
   Dedicator makes this dedication for the benefit of the public at large and
   to the detriment of the Dedicator's heirs and successors. Dedicator intends
   this dedication to be an overt act of relinquishment in perpetuity of all
@@ -37,7 +37,7 @@ License: PD
   contingent, in the Work. Dedicator understands that such relinquishment of
   all rights includes the relinquishment of all rights to enforce (by lawsuit
   or otherwise) those copyrights in the Work.
-  
+  .
   Dedicator recognizes that, once placed in the public domain, the Work may
   be freely reproduced, distributed, transmitted, used, modified, built upon,
   or otherwise exploited by anyone for any purpose, commercial or
@@ -51,10 +51,10 @@ License: MIT/X
   to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
   copies of the Software, and to permit persons to whom the Software is
   furnished to do so, subject to the following conditions:
-  
+  .
   The above copyright notice and this permission notice shall be included in
   all copies or substantial portions of the Software.
-  
+  .
   THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
   IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
   FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.  IN NO EVENT SHALL THE

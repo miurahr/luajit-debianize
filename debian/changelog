@@ -1,20 +1,135 @@
-luajit (2.0.1+dfsg2-0ubuntu0ppa1~precise) precise; urgency=low
+luajit (2.0.2+dfsg-1) unstable; urgency=low
 
-  * new upsteam release
+  * New upstream release 
 
- -- Bearnard Hibbins <bearnard@gmail.com>  Thu, 21 Mar 2013 18:43:03 +0200
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sun, 09 Jun 2013 16:04:50 +0200
 
-luajit (2.0.0~beta10+dfsg2-0ubuntu0ppa1~precise) precise; urgency=low
+luajit (2.0.1+hotfix1+dfsg-1) unstable; urgency=low
 
-  * new upsteam release
+  * New upsream release
+  * Packaging moved to git
 
- -- Bearnard Hibbins <bearnard@gmail.com>  Wed, 09 Nov 2011 18:43:03 +0200
+ -- Enrico Tassi <gareuselesinge@debian.org>  Mon, 20 May 2013 18:08:12 +0200
 
-luajit (2.0.0~beta8+dfsg2-1~yola~precise~ppa2) precise; urgency=low
+luajit (2.0.0+dfsg-1) unstable; urgency=low
 
-  * new upsteam release
+  * New upstream release
 
- -- Bearnard Hibbins <bearnard@gmail.com>  Wed, 09 Nov 2011 18:43:03 +0200
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sat, 03 Nov 2012 14:07:56 +0100
+
+luajit (2.0.0~rc1+dfsg-1) experimental; urgency=low
+
+  * New upstream release adding support for mips, mipsel, powerpcspe and armhf
+    (Closes: #634244)
+  * libluajit-5.1-common made Multi-Arch: foreign (Closes: #691657)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sun, 08 Apr 2012 22:55:02 +0200
+
+luajit (2.0.0~beta9+dfsg-2) unstable; urgency=low
+
+  * Added patch beta9_hotfix1
+  * Update copyright file to adhere to DEP5 
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sat, 04 Feb 2012 13:52:02 +0100
+
+luajit (2.0.0~beta9+dfsg-1) unstable; urgency=low
+
+  * New upstream release with powerpc support
+  * Refreshed quilt patches
+  * Removed beta8_hotfix1 patch, no more needed
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Mon, 19 Dec 2011 17:20:40 +0100
+
+luajit (2.0.0~beta8+dfsg-4) unstable; urgency=low
+
+  * added -dev package to armel (Closes: #630814)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Wed, 20 Jul 2011 19:34:32 +0200
+
+luajit (2.0.0~beta8+dfsg-3) unstable; urgency=low
+
+  * Bumped standards-version to 3.9.2, no changes
+  * Multi-Arch support
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Wed, 20 Jul 2011 11:13:50 +0200
+
+luajit (2.0.0~beta8+dfsg-2) unstable; urgency=low
+
+  * Added upstream patch: beta8_hotfix1
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Wed, 06 Jul 2011 09:23:02 +0200
+
+luajit (2.0.0~beta8+dfsg-1) unstable; urgency=low
+
+  * New upstream release with arm JIT support
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Fri, 24 Jun 2011 13:48:45 +0200
+
+luajit (2.0.0~beta7+dfsg-1) unstable; urgency=low
+
+  * New upstream release with arm support
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Mon, 09 May 2011 23:14:21 +0200
+
+luajit (2.0.0~beta6+dfsg-1) unstable; urgency=low
+
+  * new upstream release
+  * watch file updated 
+  * updated standards-version to 3.9.1, no change needed
+  * updated copyright (extends to 2011)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sun, 13 Feb 2011 13:22:20 +0100
+
+luajit (2.0.0~beta5+dfsg-1) unstable; urgency=low
+
+  * new upstream release
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Wed, 25 Aug 2010 09:40:46 +0200
+
+luajit (2.0.0~beta4+dfsg-1) unstable; urgency=low
+
+  * new upstream release
+  * bumped stsandards version to 3.8.4, no changes 
+  * switch to source format 3 + quilt 
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Mon, 29 Mar 2010 11:28:36 +0200
+
+luajit (2.0.0~beta3+dfsg-2) unstable; urgency=low
+
+  * added build depend over quilt
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sun, 07 Mar 2010 23:49:45 +0100
+
+luajit (2.0.0~beta3+dfsg-1) unstable; urgency=low
+
+  * new upstream release, adding support for amd64
+  * updated copyright, now is 2005-2010 by Myke Pall
+  * drop kFreeBSD-amd64 package, since it is unsupported by the upstream
+    because there is no way to force FreeBSD mmap to return pointers
+    fitting 32 bits. Moreover, since multiarch is not there yet, it is of
+    little interest to compile a 32 bit version of the jitter with -m32, 
+    since no external Lua C modules could then be loaded. 
+
+    The upstream technical explanation for not supporting the FreeBSD 
+    kernel on an amd64 system follows:
+
+       JIT/x64 needs to allocate objects in the lower 2GB of
+       virtual memory. Linux/x64 provides a MAP_32BIT flag for mmap().
+       Unfortunately, FreeBSD doesn't have an equivalent flag. In
+       addition it overrides mmap() hints in the lower 32GB (*), which
+       foils a probing approach. MAP_FIXED cannot be used, since it
+       unconditionally overwrites existing mappings.
+       
+       (*) The guilty FreeBSD kernel code:
+           grep -C15 RLIMIT_DATA /usr/src/sys/vm/vm_mmap.c
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Sun, 07 Mar 2010 20:25:32 +0100
+
+luajit (2.0.0~beta2+dfsg2-3) unstable; urgency=low
+
+  * Do not depend on gcc-multilib on kfreebsd-i386 (Closes: 570489)
+
+ -- Enrico Tassi <gareuselesinge@debian.org>  Fri, 19 Feb 2010 17:41:20 +0100
 
 luajit (2.0.0~beta2+dfsg2-2) unstable; urgency=low
 
