@@ -1,3 +1,9 @@
+luajit (2.0.2+dfsg-1ubuntu1~precise) precise; urgency=low
+
+  * Backport to precise.
+
+ -- Hiroshi Miura <miurahr@linux.com>  Mon, 07 Oct 2013 00:06:05 +0900
+
 luajit (2.0.2+dfsg-1) unstable; urgency=low
 
   * New upstream release 
